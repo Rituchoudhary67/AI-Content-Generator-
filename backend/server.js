@@ -5,6 +5,8 @@ const mongoose = require('mongoose');
 const rateLimit = require('express-rate-limit');
 const authRoutes = require('./routes/auth');
 const contentRoutes = require('./routes/content');
+const historyRoutes = require('./routes/history');
+const statsRoutes = require('./routes/stats');
 require('dotenv').config();
 
 const app = express();
@@ -18,6 +20,8 @@ app.use(express.json());
 app.use(morgan('dev'));
 app.use('/api/auth', authRoutes);
 app.use('/api/content', contentRoutes);
+app.use('/api/history', historyRoutes);
+app.use('/api/stats', statsRoutes);
 
 // Global rate limiter — max 100 requests per 15 min per IP
 const globalLimiter = rateLimit({
