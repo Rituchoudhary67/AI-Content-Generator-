@@ -32,9 +32,8 @@ const contentSchema = new mongoose.Schema({
   updatedAt: { type: Date, default: Date.now }
 });
 
-contentSchema.pre('save', function(next) {
+contentSchema.pre('save', function() {
   this.updatedAt = new Date();
-  next();
 });
 
 module.exports = mongoose.model('Content', contentSchema);
