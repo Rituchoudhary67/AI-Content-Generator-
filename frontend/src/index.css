@@ -72,3 +72,32 @@ label { font-size: 13px; color: var(--text2); font-weight: 500; margin-bottom: 6
 
 @keyframes fadeIn { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
 .fade-in { animation: fadeIn 0.3s ease forwards; }
+
+/* Smooth transitions everywhere */
+* { transition: background 0.2s, border-color 0.2s, color 0.2s; }
+
+/* Better card hover */
+.card:hover { border-color: var(--border-hover); }
+
+/* Responsive layout fixes */
+@media (max-width: 768px) {
+  .card { padding: 16px; }
+}
+
+@media (max-width: 900px) {
+  .generator-layout {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Better scrollbar */
+* { scrollbar-width: thin; scrollbar-color: var(--bg3) var(--bg2); }
+
+/* Button active state */
+.btn:active { transform: scale(0.98); }
+
+/* Input placeholder color */
+::placeholder { color: var(--text3); }
+
+/* Selection color */
+::selection { background: var(--accent-glow); color: var(--text); }
