@@ -2,7 +2,7 @@
 
 > A production-ready, full-stack AI content generation platform built from scratch using React, Node.js, MongoDB and Groq LLaMA 3.3-70B. Not just another ChatGPT wrapper — this project is built around real engineering concepts like structured prompt engineering, version control for writing, and a multi-turn AI critique system.
 
-🔗 **Live Demo:** [Click here to try ContentForge AI](https://ai-content-generator-4336dcxz8-rituchoudhary67s-projects.vercel.app)  
+🔗 **Live Demo:** [ai-content-generator-navy.vercel.app](https://ai-content-generator-navy.vercel.app)  
 📦 **Repository:** [github.com/Rituchoudhary67/AI-Content-Generator-](https://github.com/Rituchoudhary67/AI-Content-Generator-)  
 👩‍💻 **Built by:** Ritu Choudhary
 
@@ -28,31 +28,20 @@ The project was built entirely from scratch — backend API, database models, au
 
 If an interviewer asks *"There are already tools like Jasper, Copy.ai — why build this?"* — here's the answer:
 
-### 1. 🧠 Structured Prompt Engineering (Not a Text Box)
-Most tools just forward your input to the AI. ContentForge has a `buildPrompt()` function in `controllers/gemini.js` that dynamically constructs a surgical prompt based on:
-- Content type (blog post vs tweet thread = completely different prompt structure)
-- Tone (witty vs formal = different language instructions)
-- Target audience (developers vs startup founders = different vocabulary)
-- Word count (short/medium/long = different structural instructions)
-
-This is what companies mean when they say "prompt engineering skills" in job descriptions.
+### 1. 🧠 Structured Prompt Engineering (Not Just a Text Box)
+Most tools just forward your input to the AI. ContentForge has a `buildPrompt()` function in `controllers/gemini.js` that dynamically constructs a surgical prompt based on content type, tone, target audience, and word count. Each of the 8 content types has its own structural instructions — a tweet thread prompt is completely different from a blog post prompt. This is what companies mean when they say "prompt engineering skills" in job descriptions.
 
 ### 2. 🔁 Version Control for Writing (Like Git for Content)
 When a user clicks "Regenerate", the old version is NOT overwritten. It's pushed into a MongoDB `versions[]` array with a `currentVersion` pointer — exactly like Git commits. Users can switch between versions and compare v1 vs v3 side by side. No other free tool does this well.
 
 ### 3. 💡 Multi-Turn AI Critique Engine
-After generating content, a second independent AI call analyzes the output and returns:
-- A quality score out of 10
-- One-sentence overall assessment
-- 3 specific, actionable improvement suggestions
-
-This demonstrates understanding of multi-turn AI workflows — not just single API calls.
+After generating content, a second independent AI call analyzes the output and returns a quality score out of 10, a one-sentence overall assessment, and 3 specific actionable improvement suggestions. This demonstrates understanding of multi-turn AI workflows — not just single API calls.
 
 ### 4. 📊 Token Usage Analytics
 Every generation tracks tokens used and stores it per user. The analytics dashboard shows total tokens, average tokens per generation, content type breakdown, and tone usage — all using MongoDB aggregation pipelines. This shows you understand how LLMs work under the hood.
 
 ### 5. 💯 100% Free Stack
-Jasper costs $49/month. Copy.ai costs $36/month. ContentForge costs $0/month to run and is fully open source. That's a legitimate product differentiator.
+Jasper costs $49/month. Copy.ai costs $36/month. ContentForge costs $0/month to run and is fully open source.
 
 ---
 
@@ -64,7 +53,7 @@ Jasper costs $49/month. Copy.ai costs $36/month. ContentForge costs $0/month to 
 - 🌐 Multi-language support — English, Hindi, Spanish, French, German, Marathi
 - 🔁 Full version history — every regeneration is saved and switchable
 - 🔀 Side-by-side version comparison — compare any two versions like a Git diff
-- 💡 AI improvement engine — score out of 10 + 3 specific suggestions per generation
+- 💡 AI improvement engine — score out of 10 plus 3 specific suggestions per generation
 - 📊 Token analytics dashboard — usage graphs, breakdowns by content type and tone
 - 💾 Export as Markdown (.md) or plain text (.txt)
 - ⭐ Favorites system — star your best content and filter by favorites
@@ -81,7 +70,7 @@ Jasper costs $49/month. Copy.ai costs $36/month. ContentForge costs $0/month to 
 | Layer | Technology | Why This Choice |
 |-------|-----------|-----------------|
 | Frontend | React 18 + Vite | Fast HMR, modern React with hooks |
-| Styling | Inline CSS + CSS variables | No extra dependencies, full control |
+| Styling | CSS variables + inline styles | No extra dependencies, full control |
 | Routing | React Router v6 | Industry standard for React SPAs |
 | HTTP Client | Axios | Interceptors for auto token attachment |
 | Backend | Node.js + Express | Fast, minimal, JavaScript full-stack |
@@ -93,5 +82,6 @@ Jasper costs $49/month. Copy.ai costs $36/month. ContentForge costs $0/month to 
 | Backend Deploy | Render.com | Free Node.js hosting with auto-deploy |
 | Database Host | MongoDB Atlas | 512MB free forever |
 
+**Total monthly cost: $0.00**
 
 ---
