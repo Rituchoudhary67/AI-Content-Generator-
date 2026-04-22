@@ -96,7 +96,3 @@ Jasper costs $49/month. Copy.ai costs $36/month. ContentForge costs $0/month to 
 **Total monthly cost: $0.00**
 
 ---
-
-## 📁 Project Structure
-
-```
