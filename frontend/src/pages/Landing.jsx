@@ -369,7 +369,7 @@ export default function Landing() {
                 }}>
                 GitHub
               </a>
-              <a href="https://linkedin.com/in/rituchoudhary"
+              <a href="https://www.linkedin.com/in/ritu-choudhary-3368b7251/"
                 target="_blank" rel="noreferrer"
                 style={{
                   padding: '6px 12px',
